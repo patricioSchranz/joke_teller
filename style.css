@@ -53,6 +53,7 @@ Joke Teller
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    /* gif comes from => https://giphy.com/eyedesyn */
     background: url('./robot.gif');
     background-size: contain;
     background-position: left center;
