@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+
+/* ----------------------------------------
+Resets / Defaults / Common 
+-------------------------------------------- */
+
+button{
+    all: initial;
+    cursor: pointer;
+    font-family: Courier, monospace;
+}
+
+html *{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: #45badd;
+}
+
+
+
+/* ---------------------------------------
+Special Elements 
+------------------------------------------*/
+
+.loading-zone{
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 20;
+}
+
+
+
+/* -------------------------------------------------
+Joke Teller
+---------------------------------------------------- */
+
+/* --- MAIN CONTENT --- */
+
+.main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: url('./robot.gif');
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+#joke-button{
+    background-color: floralwhite;
+    padding: 1rem;
+    box-shadow: 
+        1px 10px 15px rgba(0, 0, 0, 0.5),
+        1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+    border-radius: .2rem;
+    margin-right: 15vw;
+    border: 5px double rgba(0, 0, 0, 0.2);
+    background-color: #EF7A85;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+    transition: all .3s;
+}
+
+#joke-button:hover{
+    box-shadow: 
+        1px 5px 5px rgba(0, 0, 0, 0.5),
+        1px 1px 3px rgba(0, 0, 0, 0.2) inset;
+}
+
+#joke-button:active{
+    box-shadow: 
+        1px 5px 5px rgba(0, 0, 0, 0.5),
+        2px 2px 5px rgba(0, 0, 0, 0.2) inset;
+}
+
+#joke-button:disabled{
+    opacity: 0.3;
+    cursor: none;
+}
+
+
+/* --- LANGUAGE SELECTION --- */
+
+.language_container{
+    position: fixed;
+    top: 0rem;
+    right: 0rem;
+    background-color: rgba(255, 250, 240, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15rem;
+    border-radius: 2rem 0 0 2rem;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.language-background{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #FFE74C;
+    z-index: -1;
+    border-radius: 2rem;
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.2);
+    transition: all .3s;
+}
+
+.language-background-right{
+    left: 50%;
+    border-radius: 2rem 0 0 2rem;
+}
+
+.language-button{
+    font-family: 'Heebo', sans-serif;
+    font-size: 90%;
+    padding: .5rem;
+    width: 50%;
+    text-align: center;
+}
+
+
+
+/* -------------------------------------------------
+Media Querys
+---------------------------------------------------- */
+
+@media screen and (max-width: 1200px) {
+    .main{
+        flex-direction: column;
+        justify-content: flex-end;
+        background-size: cover;
+        background-position: center center;
+    }
+
+    #joke-button{
+        margin: 0 0 3rem 0;
+    }
+
+    .language_container{
+        width: 40vw;
+        right: calc(30vw);
+        border-radius: 2rem;
+    }
+
+    .language-background-right{
+        border-radius: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 500px){
+    .language_container{
+        width: 100vw;
+        border-radius: 0;
+        right: 0;
+    }
+
+    .language-background{
+        border-radius: 0;
+    }
+
+    .language-background-right{
+        border-radius: 0;
+    }
+}
