@@ -2,7 +2,7 @@
 
 ## Description
 
-A random joke is fetched and handed over to a Voice Api.
+A random joke will be fetched and handed over to a Voice Api.
 
 
 ## About

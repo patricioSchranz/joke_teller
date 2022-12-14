@@ -124,19 +124,19 @@ jokeButton.addEventListener('click', getAJoke)
 languageButtons.forEach(button =>{
     button.addEventListener('click', ()=>{
         if(button.innerHTML === 'Deutsch'){
-            console.log('Deutsch')
             language = 'german'
             jokeButton.innerHTML = 'Erzähl mir einen Witz'
 
+            // => if the background of the language buttons has not the class xxx-right, add them
             languageBackground.classList.contains('language-background-right') || 
                 languageBackground.classList.add('language-background-right')
        
         }
         else{
-            console.log('Englisch')
             language = 'english'
             jokeButton.innerHTML = 'Tell Me A Joke'
 
+            // => if the background of the language buttons has the class xxx-right, remove them
             languageBackground.classList.contains('language-background-right') &&
                 languageBackground.classList.remove('language-background-right')
         }
